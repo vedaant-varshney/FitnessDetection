@@ -51,8 +51,11 @@ while True:
         cv.rectangle(frame, (x, y), (x + w, y + h), (255, 0, 0), 2)
     
     if xA is not None:
-        cv.rectangle(frame, (xA, yA), (xB, yB),
-                 (0, 255, 0), 2)
+        if xB - xA > yB - yA:
+            yB = yA + xB - xA
+        else:
+            xB = xA + yB - yA
+        cv.rectangle(frame, (xA, yA), (xB, yB),(0, 255, 0), 2)
 
     cv.imshow('bounding', frame)
 
