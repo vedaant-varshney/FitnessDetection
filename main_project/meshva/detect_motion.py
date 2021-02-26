@@ -56,4 +56,4 @@ while True:
 
     cv.imshow('bounding', frame)
 
-    cv.waitKey(100)
+    cv.waitKey(0)
