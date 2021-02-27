@@ -1,6 +1,7 @@
 import os
 import cv2
 import numpy as np
+import sys
 
 # Just so i know where the starting point is
 print(os.getcwd())
@@ -40,11 +41,13 @@ while(1):
     if key==(ord('r')):
         img = duplicate.copy()
         coords = [-1, -1, -1, -1]
-    if key ==(ord('e')):
+    elif key ==(ord('e')):
         roi = img[coords[0]:coords[2], coords[1]:coords[3]]
         print(roi.shape)
-    
-    elif key == 27:
+    elif key ==(ord('f')):
         break
+    elif key == 27:
+        cv2.destroyAllWindows()
+        sys.exit(1)
 
 cv2.destroyAllWindows()
