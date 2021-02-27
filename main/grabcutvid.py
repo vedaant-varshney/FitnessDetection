@@ -3,7 +3,7 @@ import cv2
 from matplotlib import pyplot as plt
 #still doing that weird webcam thing...
 if __name__ == "__main__":
-    img = cv2.imread('EFFECTS.jpg')
+    img = cv2.imread('pics/EFFECTS.jpg')
     cap = cv2.VideoCapture(0)
 
     while (1):

@@ -1,9 +1,10 @@
 import cv2
 import numpy as np
+
 if __name__ == "__main__":
 
     # load image
-    img = cv2.imread("EFFECTS.jpg")
+    img = cv2.imread("pics/EFFECTS.jpg")
     cap = cv2.VideoCapture(0)
     while (1):
         ret, frame = cap.read()
@@ -12,7 +13,7 @@ if __name__ == "__main__":
         hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 
         # threshold using inRange
-        range1 = (30, 0, 100)
+        range1 = (50, 50, 50)
         range2 = (255, 255, 255)
         mask = cv2.inRange(hsv, range1, range2)
 
@@ -39,7 +40,7 @@ if __name__ == "__main__":
         # combine inverted mask with masked image
         result = cv2.add(img_masked, mask)
 
-        cv2.imshow('frame', result)
+        cv2.imshow('frame', mask)
 
         k = cv2.waitKey(30) & 0xff
         if k == 27:

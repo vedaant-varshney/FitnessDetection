@@ -4,7 +4,7 @@ from matplotlib import pyplot as plt
 
 if __name__ == "__main__":
 
-    img = cv2.imread('EFFECTS.jpg')
+    img = cv2.imread('pics/EFFECTS.jpg')
 
     dimensions = img.shape
     mask = np.zeros(img.shape[:2], np.uint8)
