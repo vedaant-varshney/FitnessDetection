@@ -3,13 +3,14 @@ import numpy as np
 import cv2
 import sys
 
+
 # Assumes that you are working in root directory
 curDir = os.getcwd()
 
 set_number_start = int(input("Set number start point"))
 set_number_end = int(input("Set number end point"))
 
-for set_number in range(set_number_start, set_number_end+1): 
+for set_number in range(set_number_start, set_number_end+1):
 
     path = os.path.join(curDir, "images", "Set"+str(set_number))
 
@@ -28,12 +29,12 @@ for set_number in range(set_number_start, set_number_end+1):
         if event == cv2.EVENT_LBUTTONDOWN:
             drawing = True
             initial_x, initial_y = x, y
-        
+
         elif event == cv2.EVENT_MOUSEMOVE:
             if drawing == True:
                 cv2.line(img, (initial_x, initial_y), (initial_x, initial_y+(x-initial_x)), (0, 200, 0), thickness=3)
                 cv2.line(img, (initial_x, initial_y), (x, initial_y), (0, 200, 0), thickness=3)
-                
+
 
         elif event == cv2.EVENT_LBUTTONUP:
             drawing = False
@@ -59,8 +60,8 @@ for set_number in range(set_number_start, set_number_end+1):
         if key==(ord('r')):
             img = duplicate.copy()
             coords = [-1, -1, -1]
-        elif key ==(ord('e')): 
-            roi = img[coords[1]:coords[1]+coords[2], coords[0]:coords[0]+coords[2]]      
+        elif key ==(ord('e')):
+            roi = img[coords[1]:coords[1]+coords[2], coords[0]:coords[0]+coords[2]]
             if roi.shape[0] != roi.shape[1]:
                 print(coords)
                 print(roi.shape)
