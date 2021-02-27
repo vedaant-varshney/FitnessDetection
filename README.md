@@ -2,7 +2,7 @@
 
 ### A project which aims to use computer vision and neural networks to give feedback on people's exercise routines. 
 
-### Using `semi_automatic_multiple_sets.py`
+### Using `semi_automatic_multiple_sets.py` (found in main_projects/vedaant`)
 This file will allow you to easily process large amounts of exercise data into squares of focus. The input will be composed of sets of folders of freeze-frames from an exercise routine that capture the complete range of motion. The sets must be named as per the convention "Set1", "Set2", "Set3" and so on. The images are ideally named "1.png", 2.png", and so on. The output will be a processed folder containing the squares of each image. The size will vary between sets, but this will be processed later. 
 
 #### Step by Step Process
