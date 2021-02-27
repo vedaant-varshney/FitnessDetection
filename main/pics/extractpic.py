@@ -5,15 +5,15 @@ from matplotlib import pyplot as plt
 if __name__ == "__main__":
 
     # load image
-    img = cv2.imread("Lionel-Messi.jpg")
+    img = cv2.imread("EFFECTS.jpg")
 
     # convert to hsv
-    hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+    # hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
 
     # threshold using inRange
-    range1 = (150, 100, 150)
+    range1 = (10, 20, 28)
     range2 = (255, 255, 255)
-    mask = cv2.inRange(hsv, range1, range2)
+    mask = cv2.inRange(img, range1, range2)
 
     # apply morphology closing and opening to mask
     kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (7, 7))
@@ -40,10 +40,10 @@ if __name__ == "__main__":
 
     # cv2.imshow('frame', result)
 
-    plt.imshow(img)
-    plt.show()
-    plt.imshow(img_masked)
-    plt.show()
+    # plt.imshow(img)
+    # plt.show()
+    # plt.imshow(img_masked)
+    # plt.show()
     plt.imshow(mask)
     plt.show()
 
