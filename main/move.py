@@ -1,12 +1,10 @@
-import cv2
 import numpy as np
-
+import cv2
 if __name__ == "__main__":
-
 
     cap = cv2.VideoCapture(0)
 
-    fgbg = cv2.createBackgroundSubtractorMOG2()
+    fgbg = cv2.createBackgroundSubtractorMOG2(history=0, varThreshold=127, detectShadows=0)
 
     while(1):
         ret, frame = cap.read()
