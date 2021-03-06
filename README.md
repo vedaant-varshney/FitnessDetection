@@ -8,7 +8,7 @@ This file will allow you to easily process large amounts of exercise data into s
 #### Step by Step Process
 * Place all the sets in the images folder, ideally the ones assigned to you. All images should be named by convention
 * Double-check to see if the current working directory is the root project directory. If not change it to that. (Check with `os.getcwd()`)
-* The process should begin with an image close to the full range of motion in the exercise. Drag while left clicking to create a bounding box around the full person. 
+* The process should begin with an image close to the full range of motion in the exercise. Drag while left clicking to create a bounding box around the full person. Ensure that you start from the top left point.
 * Press the E key on your keyboard if satisfied. If there are no errors, press F to continue to the next set. If you draw a box incorrectly, press R to restart
 * Ensure all the processed files are in the proper folders
 
