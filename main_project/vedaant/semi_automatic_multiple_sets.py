@@ -37,6 +37,7 @@ if __name__ == "__main__":
     for set_number in range(set_number_start, set_number_end+1):
 
         path = os.path.join(retval, "images", "Set"+str(set_number))
+        print(path)
 
         file_list = os.listdir(path)
 
@@ -104,17 +105,17 @@ if __name__ == "__main__":
                 cv2.destroyAllWindows()
                 sys.exit(1)
 
-    for img_name in file_list:
-        current_path = os.path.join(path, img_name)
-        new_path = os.path.join(path, "Processed", img_name)
-        img2process = cv2.imread(current_path)
-        
-        if img2process is not None or []:
-            roi = img2process[coords[1]:coords[1]+coords[2], coords[0]:coords[0]+coords[2]]
-            cv2.imwrite((os.path.join(path, "Processed", img_name)), roi)
-            print(f"{img_name} has been processed in set {str(set_number)}")
+        for img_name in file_list:
+            current_path = os.path.join(path, img_name)
+            new_path = os.path.join(path, "Processed", img_name)
+            img2process = cv2.imread(current_path)
+            
+            if img2process is not None or []:
+                roi = img2process[coords[1]:coords[1]+coords[2], coords[0]:coords[0]+coords[2]]
+                cv2.imwrite((os.path.join(path, "Processed", img_name)), roi)
+                print(f"{img_name} has been processed in set {str(set_number)}")
 
-        cv2.destroyAllWindows()
+            cv2.destroyAllWindows()
 
         print(f"This code has been executed for Set {str(set_number)}")
 
