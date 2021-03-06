@@ -83,7 +83,8 @@ for set_number in range(set_number_start, set_number_end+1):
         current_path = os.path.join(path, img_name)
         new_path = os.path.join(path, "Processed", img_name)
         img2process = cv2.imread(current_path)
-        if img2process is not None:
+        
+        if img2process is not None or []:
             roi = img2process[coords[1]:coords[1]+coords[2], coords[0]:coords[0]+coords[2]]
             cv2.imwrite((os.path.join(path, "Processed", img_name)), roi)
             print(f"{img_name} has been processed in set {str(set_number)}")
