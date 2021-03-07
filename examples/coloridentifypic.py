@@ -12,7 +12,7 @@ if __name__ == "__main__":
     NUM_CLUSTERS = 5
 
     print('reading image')
-    im = Image.open('/Users/udiram/Documents/GitHub/FitnessDetection/main/pics/EFFECTS.jpg')
+    im = Image.open('/examples/pics/EFFECTS.jpg')
     im = im.resize((150, 150))      # optional, to reduce time
     ar = np.asarray(im)
     shape = ar.shape
