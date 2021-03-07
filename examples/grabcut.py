@@ -4,7 +4,7 @@ from matplotlib import pyplot as plt
 
 if __name__ == "__main__":
 
-    img = cv2.imread("/Users/udiram/Documents/GitHub/FitnessDetection/examples/pics/1.png")
+    img = cv2.imread("/examples/pics/good.png")
 
     dimensions = img.shape
     mask = np.zeros(img.shape[:2], np.uint8)

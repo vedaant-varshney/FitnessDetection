@@ -4,7 +4,7 @@ import numpy as np
 if __name__ == "__main__":
 
     # load image
-    img = cv2.imread("pics/EFFECTS.jpg")
+    img = cv2.imread("pics/dog.jpg")
     cap = cv2.VideoCapture(0)
     while (1):
         ret, frame = cap.read()

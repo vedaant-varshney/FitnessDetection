@@ -3,7 +3,7 @@ import numpy as np
 from PIL import Image
 
 if __name__ == "__main__":
-    ogImage = Image.open("/Users/udiram/Documents/GitHub/FitnessDetection/examples/pics/crop1.jpg")
+    ogImage = Image.open("/Users/udiram/Documents/GitHub/FitnessDetection/examples/pics/good.png")
 
 
     ogImage = ogImage.convert('L')
@@ -32,9 +32,9 @@ if __name__ == "__main__":
     width, height = testImage.size  # Get dimensions
     # testImage = testImage.crop((0, 100, width, (height / 2) - 125))
 
-    testImage.save('/Users/udiram/Documents/GitHub/FitnessDetection/examples/pics/bandw1.png')
+    testImage.save('/Users/udiram/Documents/GitHub/FitnessDetection/examples/pics/binandextractblackandwhite.png')
 
-    img = cv2.imread('/examples/pics/bandw.png')
+    img = cv2.imread('/Users/udiram/Documents/GitHub/FitnessDetection/examples/pics/binandextractblackandwhite.png')
 
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     ret, thresh = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
@@ -61,8 +61,8 @@ if __name__ == "__main__":
             result = ogImage.crop((x, y, x + w, y + h))
 
             if 10000 < w * h:  # > 30: gotta make the 100 value variable ask seb
-                result.save("/Users/udiram/Documents/GitHub/FitnessDetection/examples/pics/crop" + str(i) + ".jpg")
+                result.save("/Users/udiram/Documents/GitHub/FitnessDetection/examples/pics/binandextractcrop" + str(i) + ".jpg")
                 # columnList.append((x, x + w))
                 # LadderReduce.ladderReduce(result, x, w)
         # print(columnList)
-        cv2.imwrite("/examples/pics/out.png", img)
+        cv2.imwrite("/Users/udiram/Documents/GitHub/FitnessDetection/examples/pics/binandextractout.png", img)
