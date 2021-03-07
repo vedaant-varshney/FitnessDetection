@@ -3,7 +3,7 @@ import numpy as np
 from PIL import Image
 
 if __name__ == "__main__":
-    ogImage = Image.open("/Users/udiram/Documents/GitHub/FitnessDetection/main_project/pics/2.png")
+    ogImage = Image.open("/Users/udiram/Documents/GitHub/FitnessDetection/main/pics/crop1.jpg")
 
 
     ogImage = ogImage.convert('L')
