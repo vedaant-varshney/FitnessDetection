@@ -3,7 +3,7 @@ import numpy as np
 from PIL import Image
 
 if __name__ == "__main__":
-    ogImage = Image.open("/examples/pics/crop1.jpg")
+    ogImage = Image.open("/Users/udiram/Documents/GitHub/FitnessDetection/examples/pics/crop1.jpg")
 
 
     ogImage = ogImage.convert('L')
@@ -32,7 +32,7 @@ if __name__ == "__main__":
     width, height = testImage.size  # Get dimensions
     # testImage = testImage.crop((0, 100, width, (height / 2) - 125))
 
-    testImage.save('/Users/udiram/Documents/GitHub/FitnessDetection/examples/pics/bandw.png')
+    testImage.save('/Users/udiram/Documents/GitHub/FitnessDetection/examples/pics/bandw1.png')
 
     img = cv2.imread('/examples/pics/bandw.png')
 

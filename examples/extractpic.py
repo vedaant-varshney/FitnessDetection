@@ -5,7 +5,7 @@ from matplotlib import pyplot as plt
 if __name__ == "__main__":
 
     # load image
-    img = cv2.imread("pics/EFFECTS.jpg")
+    img = cv2.imread("/Users/udiram/Documents/GitHub/FitnessDetection/examples/pics/5.png")
 
     # convert to hsv
     # hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
