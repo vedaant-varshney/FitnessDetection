@@ -1,0 +1,5 @@
+Since we only have one class for classification at the moment, it makes sense to use some kind
+of autoencoder for this project. Given an input of our exercise images, we should be able to
+train the autoencoder and use it for the purposes of anomaly detection. Based on a threshold 
+we set for the expected loss between input and output, we can then determine if the input is 
+depicting someone doing a jumping jack or not. 
