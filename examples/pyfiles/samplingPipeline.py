@@ -10,7 +10,7 @@ if __name__ == "__main__":
         ret, frame = cap.read()
         if ret == False:
             break
-        if i %  50 == 0:  # this is the line I added to make it only save one frame every 20
+        if i % 50 == 0:  # this is the line I added to make it only save one frame every 20
             cv2.imwrite('/Users/udiram/Documents/GitHub/FitnessDetection/examples/frames/'+'frame.jpg', frame)
             ogImage = Image.open("/Users/udiram/Documents/GitHub/FitnessDetection/examples/frames/frame.jpg")
 
