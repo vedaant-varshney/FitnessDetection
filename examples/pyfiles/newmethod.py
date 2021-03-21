@@ -6,7 +6,7 @@ if __name__ == "__main__":
         clahe = cv2.createCLAHE(clipLimit=clip_limit, tileGridSize=grid_size)
         return clahe.apply(img)
 
-    src = cv2.imread("/Users/udiram/Documents/GitHub/FitnessDetection/examples/pics/ok.png")
+    src = cv2.imread("/Users/udiram/Documents/GitHub/FitnessDetection/examples/pics/good.png")
 
     # HSV thresholding to get rid of as much background as possible
     hsv = cv2.cvtColor(src.copy(), cv2.COLOR_BGR2HSV)
@@ -47,5 +47,5 @@ if __name__ == "__main__":
     x, y, w, h = brightest_rectangle
     cv2.rectangle(canvas, (x, y), (x+w, y+h), (0, 255, 0), 1)
     cv2.imshow("canvas", canvas)
-    cv2.imwrite("/Users/udiram/Documents/GitHub/FitnessDetection/examples/pics/result.jpg", canvas)
+    cv2.imwrite("/Users/udiram/Documents/GitHub/FitnessDetection/examples/pics/result.jpg", mask)
     cv2.waitKey(0)

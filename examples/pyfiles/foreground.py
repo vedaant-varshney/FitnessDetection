@@ -27,6 +27,8 @@ if __name__ == "__main__":
 
     cv2.imshow('video bw', result)
     # cv2.imshow('video original', frame)
+    cv2.imwrite('/Users/udiram/Documents/GitHub/FitnessDetection/examples/frames/fore.jpg', result)
+
 
     cv2.waitKey(0)
 

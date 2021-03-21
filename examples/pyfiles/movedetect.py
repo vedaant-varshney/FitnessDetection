@@ -11,7 +11,7 @@ if __name__ == "__main__":
 
         fgmask = fgbg.apply(frame)
 
-        cv2.imshow('frame',fgmask)
+        cv2.imshow('frame', fgmask)
         k = cv2.waitKey(30) & 0xff
         if k == 27:
             break
