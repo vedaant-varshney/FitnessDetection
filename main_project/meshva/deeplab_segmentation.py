@@ -9,7 +9,7 @@ import cv2 as cv
 import time
 
 #model = torchvision.models.segmentation.fcn_resnet101(pretrained=True).eval()
-#torch.save(model, 'deeplab_entire')
+#torch.save(model, 'deeplab_entire')   file was too big to upload?
 
 model = torch.load('deeplab_entire')
 
