@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-
+# Creates an array with 5 rows and 7 columns
 test = np.zeros((5, 7))
 print(test.shape)
 
