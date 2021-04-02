@@ -1,3 +1,4 @@
+import cv2
 import torch
 from torch import nn
 import os
@@ -19,15 +20,18 @@ if __name__ == "__main__":
     os.getcwd()
 
     curDir = os.getcwd()
-
-    processed_sets_path = os.path.join(curDir, 'images', "ProcessedSets")
-    new_extracted_path = os.path.join(curDir, 'images', 'BackgroundExtractedSets')
+    print('below is curdir')
+    print(curDir)
+    processed_sets_path = os.path.join(curDir, 'main_project', "Udi", "UdiProcessed_test")
+    new_extracted_path = os.path.join(curDir, 'main_project', 'Udi', 'BackgroundExtract_udi')
     image_list = os.listdir(processed_sets_path)
 
     for image in image_list:
         img_filename = os.path.join(processed_sets_path, image)
 
         input_image = Image.open(img_filename)
+        # input_image = cv2.resize(image, (224, 224))
+
         preprocess = transforms.Compose([
             transforms.ToTensor(),
             transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),

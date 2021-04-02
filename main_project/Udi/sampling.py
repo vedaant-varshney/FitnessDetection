@@ -1,3 +1,5 @@
+import time
+
 import cv2
 import numpy as np
 from PIL import Image
@@ -5,7 +7,7 @@ from random import random, randrange
 
 if __name__ == "__main__":
     # Opens the Video file
-    cap = cv2.VideoCapture(0)
+    cap = cv2.VideoCapture('/Users/udiram/Documents/GitHub/FitnessDetection/main_project/Udi/input/trimmedJJ.mp4')
     frame_sampling_rate = randrange(3, 5)
     # frame_sampling_rate = 15
     print("frame sampling rate:")
@@ -16,15 +18,20 @@ if __name__ == "__main__":
     imageNumber = 1
 
     while (cap.isOpened()):
+
         ret, frame = cap.read()
 
-        frame = cv2.rectangle(frame, (384, 0), (510, 128), (0, 255, 0), 3)
+        # frame = cv2.resize(frame,(244,244),fx=0,fy=0, interpolation = cv2.INTER_CUBIC)
+
+        sky = frame[0:100, 0:200]
+        # cv2.imshow('Video', sky)
 
         if ret == False:
             break
-
         if i % frame_sampling_rate == 0:  # this is the line I added to make it only save one frame every 'frame_sampling_rate'
-            cv2.imwrite('/Users/udiram/Documents/GitHub/FitnessDetection/examples/frames/Set' + str(setNumber) + 'Image' + str(imageNumber) + '.jpg', frame)
+            # frame = cv2.resize(frame, (224, 224))
+            cv2.imwrite('/Users/udiram/Documents/GitHub/FitnessDetection/main_project/Udi/UdiProcessed_test/Set' + str(
+                setNumber) + 'Image' + str(imageNumber) + '.png', sky)
             imageNumber += 1
 
         i += 1
