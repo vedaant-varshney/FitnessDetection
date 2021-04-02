@@ -30,7 +30,19 @@ if __name__ == "__main__":
         img_filename = os.path.join(processed_sets_path, image)
 
         input_image = Image.open(img_filename)
-        # input_image = cv2.resize(image, (224, 224))
+        # input_image = cv2.resize(input_image, (224, 224))
+
+        # scale_percent = 32
+        #
+        # # calculate the 50 percent of original dimensions
+        # width = int(input_image.shape[1] * scale_percent / 100)
+        # height = int(input_image.shape[0] * scale_percent / 100)
+        #
+        # # dsize
+        # dsize = (width, height)
+        #
+        # # resize image
+        # input_image = cv2.resize(input_image, dsize)
 
         preprocess = transforms.Compose([
             transforms.ToTensor(),

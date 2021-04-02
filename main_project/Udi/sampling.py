@@ -23,7 +23,19 @@ if __name__ == "__main__":
 
         # frame = cv2.resize(frame,(244,244),fx=0,fy=0, interpolation = cv2.INTER_CUBIC)
 
-        sky = frame[0:100, 0:200]
+        frame = frame[140:940, 560:1360]
+
+        scale_percent = 30.5
+
+        # calculate the 50 percent of original dimensions
+        width = int(frame.shape[1] * scale_percent / 100)
+        height = int(frame.shape[0] * scale_percent / 100)
+
+        # dsize
+        dsize = (width, height)
+
+        # resize image
+        output = cv2.resize(frame, dsize)
         # cv2.imshow('Video', sky)
 
         if ret == False:
@@ -31,7 +43,7 @@ if __name__ == "__main__":
         if i % frame_sampling_rate == 0:  # this is the line I added to make it only save one frame every 'frame_sampling_rate'
             # frame = cv2.resize(frame, (224, 224))
             cv2.imwrite('/Users/udiram/Documents/GitHub/FitnessDetection/main_project/Udi/UdiProcessed_test/Set' + str(
-                setNumber) + 'Image' + str(imageNumber) + '.png', sky)
+                setNumber) + 'Image' + str(imageNumber) + '.png', output)
             imageNumber += 1
 
         i += 1
